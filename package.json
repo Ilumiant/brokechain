@@ -2,7 +2,7 @@
   "name": "limpio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ilumiant.github.io/brokechain/",
+  "homepage": "https://github.com/Ilumiant/brokechainapp",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
