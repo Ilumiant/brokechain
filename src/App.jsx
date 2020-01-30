@@ -42,10 +42,11 @@ export default class App extends Component {
           <Menu onSetSidebarOpen={this.onSetSidebarOpen} />
           <Switch>
             <Route>
-              <Route path="/" exact component={HomePage}/>
+              {/* <Route path="/" exact component={HomePage}/> */}
             </Route>
           </Switch>
         </BrowserRouter>
+        <HomePage/>
       </>
     );
   }
