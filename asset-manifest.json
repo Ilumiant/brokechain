@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/brokechain/static/css/main.137c22b7.chunk.css",
-    "main.js": "/brokechain/static/js/main.e2d0324e.chunk.js",
-    "main.js.map": "/brokechain/static/js/main.e2d0324e.chunk.js.map",
-    "runtime~main.js": "/brokechain/static/js/runtime~main.fb6ba221.js",
-    "runtime~main.js.map": "/brokechain/static/js/runtime~main.fb6ba221.js.map",
-    "static/js/2.234850c0.chunk.js": "/brokechain/static/js/2.234850c0.chunk.js",
-    "static/js/2.234850c0.chunk.js.map": "/brokechain/static/js/2.234850c0.chunk.js.map",
-    "index.html": "/brokechain/index.html",
-    "precache-manifest.a7be251b651022012ecd12a93503af17.js": "/brokechain/precache-manifest.a7be251b651022012ecd12a93503af17.js",
-    "service-worker.js": "/brokechain/service-worker.js",
-    "static/css/main.137c22b7.chunk.css.map": "/brokechain/static/css/main.137c22b7.chunk.css.map",
-    "static/media/logo.svg": "/brokechain/static/media/logo.5d5d9eef.svg"
+    "main.css": "/Ilumiant/brokechainapp/static/css/main.137c22b7.chunk.css",
+    "main.js": "/Ilumiant/brokechainapp/static/js/main.1a2f5c91.chunk.js",
+    "main.js.map": "/Ilumiant/brokechainapp/static/js/main.1a2f5c91.chunk.js.map",
+    "runtime~main.js": "/Ilumiant/brokechainapp/static/js/runtime~main.dae6bf68.js",
+    "runtime~main.js.map": "/Ilumiant/brokechainapp/static/js/runtime~main.dae6bf68.js.map",
+    "static/js/2.234850c0.chunk.js": "/Ilumiant/brokechainapp/static/js/2.234850c0.chunk.js",
+    "static/js/2.234850c0.chunk.js.map": "/Ilumiant/brokechainapp/static/js/2.234850c0.chunk.js.map",
+    "index.html": "/Ilumiant/brokechainapp/index.html",
+    "precache-manifest.753ecf4e41878765f8416fcde97e6b0a.js": "/Ilumiant/brokechainapp/precache-manifest.753ecf4e41878765f8416fcde97e6b0a.js",
+    "service-worker.js": "/Ilumiant/brokechainapp/service-worker.js",
+    "static/css/main.137c22b7.chunk.css.map": "/Ilumiant/brokechainapp/static/css/main.137c22b7.chunk.css.map",
+    "static/media/logo.svg": "/Ilumiant/brokechainapp/static/media/logo.5d5d9eef.svg"
   }
 }
