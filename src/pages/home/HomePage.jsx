@@ -3,6 +3,9 @@ import { Spring, Transition, animated } from 'react-spring/renderprops';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons'
 import { Col, Container, Row } from "react-bootstrap";
+// import CurrencyInput from 'react-currency-masked-input'
+// import CurrencyInput from 'react-currency-input'
+import CurrencyFormat from 'react-currency-format';
 
 export default class HomePage extends Component {
     constructor(props) {
@@ -34,7 +37,13 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">COP</span>
                             </div>
-                            <input type="text" name="cop_cash" className="form-control" onChange={ e => { this.onChange(e); this.calculateRate(); }} />
+                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                                onChange={ e => {
+                                    const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
+                                    this.setState({cop_cash: valor, showRate: false})
+                                    this.calculateRate();
+                                }}
+                            />
                         </div>
                     </Col>
                     <Col md={{ span: 4, offset: 4 }} className="mt-2">
@@ -42,7 +51,12 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">BTC</span>
                             </div>
-                            <input type="text" name="btc_cash" className="form-control" onChange={this.onChange} />
+                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                                onChange={ e => {
+                                    const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
+                                    this.setState({btc_cash: valor, showRate: false})
+                                }}
+                            />
                         </div>
                     </Col>
                     <Col md={{ span: 4, offset: 4 }} className="mt-2">
@@ -50,7 +64,13 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">VES</span>
                             </div>
-                            <input type="text" name="ves_cash" className="form-control" onChange={ e => { this.onChange(e); this.calculateRate(); }} />
+                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                                onChange={ e => {
+                                    const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
+                                    this.setState({ves_cash: valor, showRate: false})
+                                    this.calculateRate();
+                                }}
+                            />
                         </div>
                     </Col>
                     <Col md={{ span: 4, offset: 4 }} className="mt-2">
@@ -71,10 +91,15 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">{this.state.calculateOption === "by_percentage" ? "%" : (<FontAwesomeIcon icon={faChartLine} className="text-white" />)}</span>
                             </div>
-                            <input type="text" name="optionValue" className="form-control" onChange={this.onChange} />
+                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                                onChange={ e => {
+                                    const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
+                                    this.setState({optionValue: valor, showRate: false})
+                                }}
+                            />
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-2">
+                    <Col md={{ span: 4, offset: 4 }} className="mt-1">
                         <div className="rateResult mt-3">
                             <div>
                                 <FontAwesomeIcon icon={faChartLine} className="icon" />
@@ -84,7 +109,7 @@ export default class HomePage extends Component {
                                     Tasa neta
                                 </div>
                                 <div className="value">
-                                    {this.state.totalRate}
+                                    <span className={this.state.totalRate === 0 ? "text-danger" : "text-primary"}>{this.state.totalRate}</span>
                                 </div>
                             </div>
                         </div>
@@ -94,10 +119,10 @@ export default class HomePage extends Component {
                             <button className="btn btn-secondary btn-block" 
                                 onClick={this.calculate}
                                 disabled={
-                                    this.state.cop_cash === "" || this.state.cop_cash === "0" || this.state.cop_cash === 0 || this.state.cop_cash < 0 ||
-                                    this.state.btc_cash === "" || this.state.btc_cash === "0" || this.state.btc_cash === 0 || this.state.btc_cash < 0 ||
-                                    this.state.ves_cash === "" || this.state.ves_cash === "0" || this.state.ves_cash === 0 || this.state.ves_cash < 0 ||
-                                    this.state.optionValue === "" || this.state.optionValue === "0" || this.state.optionValue === 0 || this.state.optionValue < 0 ||
+                                    this.state.cop_cash === "" || this.state.cop_cash === "0" || this.state.cop_cash === 0 || this.state.cop_cash < 0.000000000000000001 ||
+                                    this.state.btc_cash === "" || this.state.btc_cash === "0" || this.state.btc_cash === 0 || this.state.btc_cash < 0.000000000000000001 ||
+                                    this.state.ves_cash === "" || this.state.ves_cash === "0" || this.state.ves_cash === 0 || this.state.ves_cash < 0.000000000000000001 ||
+                                    this.state.optionValue === "" || this.state.optionValue === "0" || this.state.optionValue === 0 || this.state.optionValue < 0.000000000000000001 ||
                                     isNaN(this.state.cop_cash) || isNaN(this.state.btc_cash) ||
                                     isNaN(this.state.ves_cash) || isNaN(this.state.optionValue)
                                 }
@@ -121,31 +146,29 @@ export default class HomePage extends Component {
                                         <Spring from={{opacity: 0}} to={{opacity: 1}} >
                                             {props => (
                                                 <div style={props} className="rateResult mt-3">
-                                                    <div>
-                                                        <FontAwesomeIcon icon={faChartLine} className="icon" />
+                                                    <div className="bg-primary px-1 m-2 rounded">
+                                                        {/* <FontAwesomeIcon icon={faChartLine} className="icon" /> */}
                                                     </div>
                                                     <div className="content">
-                                                        <div className="title">
-                                                            Tasa del {this.state.percentage}%
-                                                        </div>
-                                                        <div className="value">
-                                                            {this.state.realRate}
+                                                        <div>
+                                                            <span className="title">Tasa del {this.state.percentage}%: </span>
+                                                            <span className="value"><CurrencyFormat value={this.state.realRate} displayType={'text'} thousandSeparator={"."} decimalSeparator={","} allowNegative={false} /></span>
                                                         </div>
                                                         <div>
                                                             <span className="title">BTC a vender: </span>
-                                                            {this.state.btc_percent} btc
+                                                            <CurrencyFormat value={this.state.btc_percent} displayType={'text'} thousandSeparator={"."} decimalSeparator={","} allowNegative={false} /> btc
                                                         </div>
                                                         <div>
                                                             <span className="title">VES a entregar: </span>
-                                                            {this.state.ves_percent.toFixed(2)} Bs.
+                                                            {this.state.ves_percent}
                                                         </div>
                                                         <div>
                                                             <span className="title">Ganancia en BTC: </span>
-                                                            {this.state.btc_profits} btc
+                                                            <CurrencyFormat value={this.state.btc_profits} displayType={'text'} thousandSeparator={"."} decimalSeparator={","} allowNegative={false} /> btc
                                                         </div>
                                                         <div>
                                                             <span className="title">Ganancia en VES: </span>
-                                                            {this.state.ves_profits.toFixed(2)} Bs.
+                                                            {this.state.ves_profits}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -198,7 +221,10 @@ export default class HomePage extends Component {
             const realRate = cop_cash / ves_percent
             const btc_profits = btc_cash - btc_percent
             const ves_profits = ves_cash - ves_percent
-            this.setState({totalRate, percentage, btc_percent, ves_percent, realRate, ves_profits, btc_profits, showRate: true})
+            this.setState({totalRate, percentage, btc_percent, 
+                ves_percent: new Intl.NumberFormat('es-VE', { style: 'currency', currency: 'VES' }).format(ves_percent),
+                ves_profits: new Intl.NumberFormat('es-VE', { style: 'currency', currency: 'VES' }).format(ves_profits),
+                realRate, btc_profits, showRate: true})
         }
 
         if(this.state.calculateOption === "by_rate") {
@@ -209,7 +235,10 @@ export default class HomePage extends Component {
             const btc_profits = btc_cash - btc_percent
             const ves_profits = ves_cash - ves_percent
             const percentage = ves_profits * 100 / ves_cash;            
-            this.setState({totalRate, percentage, btc_percent, ves_percent, realRate, ves_profits, btc_profits, showRate: true})
+            this.setState({totalRate, percentage, btc_percent, 
+                ves_percent: new Intl.NumberFormat('es-VE', { style: 'currency', currency: 'VES' }).format(ves_percent),
+                ves_profits: new Intl.NumberFormat('es-VE', { style: 'currency', currency: 'VES' }).format(ves_profits),
+                realRate, btc_profits, showRate: true})
         }
 
         
