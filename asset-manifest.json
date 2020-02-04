@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/brokechain/static/css/main.c3aa6bb6.chunk.css",
-    "main.js": "/brokechain/static/js/main.9fd05b5c.chunk.js",
-    "main.js.map": "/brokechain/static/js/main.9fd05b5c.chunk.js.map",
+    "main.css": "/brokechain/static/css/main.b8d93fba.chunk.css",
+    "main.js": "/brokechain/static/js/main.63d06cb1.chunk.js",
+    "main.js.map": "/brokechain/static/js/main.63d06cb1.chunk.js.map",
     "runtime~main.js": "/brokechain/static/js/runtime~main.71e848e3.js",
     "runtime~main.js.map": "/brokechain/static/js/runtime~main.71e848e3.js.map",
-    "static/js/2.76b1fc23.chunk.js": "/brokechain/static/js/2.76b1fc23.chunk.js",
-    "static/js/2.76b1fc23.chunk.js.map": "/brokechain/static/js/2.76b1fc23.chunk.js.map",
+    "static/js/2.6fbcd1a6.chunk.js": "/brokechain/static/js/2.6fbcd1a6.chunk.js",
+    "static/js/2.6fbcd1a6.chunk.js.map": "/brokechain/static/js/2.6fbcd1a6.chunk.js.map",
     "index.html": "/brokechain/index.html",
-    "precache-manifest.d3ea39ccd2cb09e9e079d54a87748195.js": "/brokechain/precache-manifest.d3ea39ccd2cb09e9e079d54a87748195.js",
+    "precache-manifest.0e1929a96e9e1e22c85ef888ccc40129.js": "/brokechain/precache-manifest.0e1929a96e9e1e22c85ef888ccc40129.js",
     "service-worker.js": "/brokechain/service-worker.js",
-    "static/css/main.c3aa6bb6.chunk.css.map": "/brokechain/static/css/main.c3aa6bb6.chunk.css.map",
+    "static/css/main.b8d93fba.chunk.css.map": "/brokechain/static/css/main.b8d93fba.chunk.css.map",
     "static/media/logo.svg": "/brokechain/static/media/logo.5d5d9eef.svg"
   }
 }
