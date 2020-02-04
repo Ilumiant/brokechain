@@ -86,7 +86,7 @@ export default class ComercesPage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">COP</span>
                             </div>
-                            <CurrencyFormat className="form-control" thousandSeparator={","} allowNegative={false} 
+                            <CurrencyFormat className="form-control" thousandSeparator={","} decimalSeparator={"."} allowNegative={false} 
                                 onChange={ e => {
                                     const valor = e.target.value.replace(/,/g, "")
                                     this.setState({cop_cash: parseFloat(valor), rates: []})

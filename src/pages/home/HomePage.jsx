@@ -37,7 +37,7 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">COP</span>
                             </div>
-                            {/* <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                            {/* <CurrencyFormat className="form-control" thousandSeparator={""} thousandSeparator={"."} allowNegative={false} 
                                 onChange={ e => {
                                     const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
                                     this.setState({cop_cash: valor, showRate: false})
@@ -58,7 +58,7 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">BTC</span>
                             </div>
-                            {/* <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                            {/* <CurrencyFormat className="form-control" thousandSeparator={""} thousandSeparator={"."} allowNegative={false} 
                                 onChange={ e => {
                                     const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
                                     this.setState({btc_cash: valor, showRate: false})
@@ -77,7 +77,7 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">VES</span>
                             </div>
-                            {/* <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                            {/* <CurrencyFormat className="form-control" thousandSeparator={""} thousandSeparator={"."} allowNegative={false} 
                                 onChange={ e => {
                                     const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
                                     this.setState({ves_cash: valor, showRate: false})
@@ -111,9 +111,9 @@ export default class HomePage extends Component {
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">{this.state.calculateOption === "by_percentage" ? "%" : (<FontAwesomeIcon icon={faChartLine} className="text-white" />)}</span>
                             </div>
-                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                            <CurrencyFormat className="form-control" allowNegative={false} 
                                 onChange={ e => {
-                                    const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
+                                    const valor = e.target.value
                                     this.setState({optionValue: valor, showRate: false})
                                 }}
                             />
@@ -172,11 +172,11 @@ export default class HomePage extends Component {
                                                     <div className="content">
                                                         <div>
                                                             <span className="title">Tasa del {this.state.percentage}%: </span>
-                                                            <span className="value"><CurrencyFormat value={this.state.realRate} displayType={'text'} thousandSeparator={"."} decimalSeparator={","} allowNegative={false} /></span>
+                                                            <span className="value"><CurrencyFormat value={this.state.realRate} displayType={'text'} allowNegative={false} /></span>
                                                         </div>
                                                         <div>
                                                             <span className="title">BTC a vender: </span>
-                                                            <CurrencyFormat value={this.state.btc_percent} displayType={'text'} thousandSeparator={"."} decimalSeparator={","} allowNegative={false} /> btc
+                                                            <CurrencyFormat value={this.state.btc_percent} displayType={'text'} allowNegative={false} /> btc
                                                         </div>
                                                         <div>
                                                             <span className="title">VES a entregar: </span>
@@ -184,7 +184,7 @@ export default class HomePage extends Component {
                                                         </div>
                                                         <div>
                                                             <span className="title">Ganancia en BTC: </span>
-                                                            <CurrencyFormat value={this.state.btc_profits} displayType={'text'} thousandSeparator={"."} decimalSeparator={","} allowNegative={false} /> btc
+                                                            <CurrencyFormat value={this.state.btc_profits} displayType={'text'} allowNegative={false} /> btc
                                                         </div>
                                                         <div>
                                                             <span className="title">Ganancia en VES: </span>
