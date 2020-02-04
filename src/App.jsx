@@ -6,6 +6,8 @@ import Sidebar from "react-sidebar";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomePage from "./pages/home/HomePage"
 import Menu from './Menu';
+import { Col, Container, Nav, Row, Tab } from "react-bootstrap"
+import ComercesPage from './pages/comerces/ComercesPage';
 
 const mql = window.matchMedia(`(min-width: 800px)`);
 
@@ -46,7 +48,38 @@ export default class App extends Component {
             </Route>
           </Switch>
         </BrowserRouter>
-        <HomePage/>
+        <Container fluid={true}>
+          <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+            <Row>
+              <Col md={{ span: 4, offset: 4 }} className="mt-2">
+                <Nav variant="tabs">
+                  <Nav.Item>
+                    <Nav.Link eventKey="first">Calculadora</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="second">Imagen</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="third">Comercios</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </Col>
+              <Col md={{ span: 4, offset: 4 }} className="mt-2">
+                <Tab.Content>
+                  <Tab.Pane eventKey="first">
+                    <HomePage/>
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="second">
+                    Imagen
+                  </Tab.Pane>
+                  <Tab.Pane eventKey="third">
+                    <ComercesPage/>
+                  </Tab.Pane>
+                </Tab.Content>
+              </Col>
+            </Row>
+          </Tab.Container>
+        </Container>
       </>
     );
   }

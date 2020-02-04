@@ -32,48 +32,68 @@ export default class HomePage extends Component {
         return (
             <Container className="home">
                 <Row>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-3">
+                    <Col xs={12} className="mt-3">
                         <div className="input-group">
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">COP</span>
                             </div>
-                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                            {/* <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
                                 onChange={ e => {
                                     const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
                                     this.setState({cop_cash: valor, showRate: false})
                                     this.calculateRate();
                                 }}
+                            /> */}
+                            <CurrencyFormat className="form-control" thousandSeparator={","} allowNegative={false} 
+                                onChange={ e => {
+                                    const valor = e.target.value.replace(/,/g, "")
+                                    this.setState({cop_cash: valor, showRate: false})
+                                    this.calculateRate()
+                                }}
                             />
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-2">
+                    <Col xs={12} className="mt-2">
                         <div className="input-group">
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">BTC</span>
                             </div>
-                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                            {/* <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
                                 onChange={ e => {
                                     const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
+                                    this.setState({btc_cash: valor, showRate: false})
+                                }}
+                            /> */}
+                            <CurrencyFormat className="form-control" thousandSeparator={","} allowNegative={false} 
+                                onChange={ e => {
+                                    const valor = e.target.value.replace(/,/g, "")
                                     this.setState({btc_cash: valor, showRate: false})
                                 }}
                             />
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-2">
+                    <Col xs={12} className="mt-2">
                         <div className="input-group">
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">VES</span>
                             </div>
-                            <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
+                            {/* <CurrencyFormat className="form-control" thousandSeparator={"."} decimalSeparator={","} allowNegative={false} 
                                 onChange={ e => {
                                     const valor = e.target.value.replace(/\./g, "").replace(/,/g, ".")
                                     this.setState({ves_cash: valor, showRate: false})
-                                    this.calculateRate();
+                                    this.calculateRate()
+                                }}
+                            /> */}
+                            <CurrencyFormat className="form-control" thousandSeparator={","} allowNegative={false} 
+                                onChange={ e => {
+                                    const valor = e.target.value.replace(/,/g, "")
+                                    this.setState({ves_cash: valor, showRate: false})
+                                    this.calculateRate()
                                 }}
                             />
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-2">
+                    <Col xs={6} className="mt-2">
                         <div className="input-group">
                         <select 
                             className="form-control text-white bg-primary"
@@ -86,7 +106,7 @@ export default class HomePage extends Component {
                         </select>
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-2">
+                    <Col xs={6} className="mt-2">
                         <div className="input-group">
                             <div className="input-group-prepend">
                                 <span className="input-group-text bg-primary text-white">{this.state.calculateOption === "by_percentage" ? "%" : (<FontAwesomeIcon icon={faChartLine} className="text-white" />)}</span>
@@ -99,7 +119,7 @@ export default class HomePage extends Component {
                             />
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-1">
+                    <Col xs={12} className="mt-1">
                         <div className="rateResult mt-3">
                             <div>
                                 <FontAwesomeIcon icon={faChartLine} className="icon" />
@@ -114,7 +134,7 @@ export default class HomePage extends Component {
                             </div>
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-3">
+                    <Col xs={12} className="mt-3">
                         <div className="input-group">
                             <button className="btn btn-secondary btn-block" 
                                 onClick={this.calculate}
@@ -131,7 +151,7 @@ export default class HomePage extends Component {
                             </button>
                         </div>
                     </Col>
-                    <Col md={{ span: 4, offset: 4 }} className="mt-5">
+                    <Col xs={12} className="mt-5">
                         <Transition
                             native
                             items={this.state.showRate}
