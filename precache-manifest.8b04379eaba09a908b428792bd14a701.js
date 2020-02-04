@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4173662771c256d8721e65da69a4ea81",
+    "revision": "9495e56d08c02382310d597f6da9b2aa",
     "url": "/brokechain/index.html"
   },
   {
-    "revision": "f830a4dbfa52a4320fa2",
+    "revision": "2711d121c3a451df1cf9",
     "url": "/brokechain/static/css/main.b8d93fba.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/brokechain/static/js/2.6fbcd1a6.chunk.js"
   },
   {
-    "revision": "f830a4dbfa52a4320fa2",
-    "url": "/brokechain/static/js/main.63d06cb1.chunk.js"
+    "revision": "2711d121c3a451df1cf9",
+    "url": "/brokechain/static/js/main.200c0340.chunk.js"
   },
   {
     "revision": "01def882dedd116878d6",

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/brokechain/static/css/main.b8d93fba.chunk.css",
-    "main.js": "/brokechain/static/js/main.63d06cb1.chunk.js",
-    "main.js.map": "/brokechain/static/js/main.63d06cb1.chunk.js.map",
+    "main.js": "/brokechain/static/js/main.200c0340.chunk.js",
+    "main.js.map": "/brokechain/static/js/main.200c0340.chunk.js.map",
     "runtime~main.js": "/brokechain/static/js/runtime~main.71e848e3.js",
     "runtime~main.js.map": "/brokechain/static/js/runtime~main.71e848e3.js.map",
     "static/js/2.6fbcd1a6.chunk.js": "/brokechain/static/js/2.6fbcd1a6.chunk.js",
     "static/js/2.6fbcd1a6.chunk.js.map": "/brokechain/static/js/2.6fbcd1a6.chunk.js.map",
     "index.html": "/brokechain/index.html",
-    "precache-manifest.0e1929a96e9e1e22c85ef888ccc40129.js": "/brokechain/precache-manifest.0e1929a96e9e1e22c85ef888ccc40129.js",
+    "precache-manifest.8b04379eaba09a908b428792bd14a701.js": "/brokechain/precache-manifest.8b04379eaba09a908b428792bd14a701.js",
     "service-worker.js": "/brokechain/service-worker.js",
     "static/css/main.b8d93fba.chunk.css.map": "/brokechain/static/css/main.b8d93fba.chunk.css.map",
     "static/media/logo.svg": "/brokechain/static/media/logo.5d5d9eef.svg"
